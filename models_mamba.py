@@ -521,11 +521,9 @@ class VisionMamba(nn.Module):
                     hidden_states = hidden_states.flip([1])
                     if residual is not None:
                         residual = residual.flip([1])
-                ##################################加入频域学习###############################################################
                 if count_layer < 1:
                     hidden_states = hidden_states + torch.abs(torch.fft.fftshift(torch.fft.fft2(hidden_states,norm='ortho')))
                     count_layer = count_layer + 1
-                #######################################################################################################
 
                 hidden_states, residual = layer(
                     hidden_states, residual, inference_params=inference_params
