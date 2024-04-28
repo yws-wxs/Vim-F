@@ -65,9 +65,7 @@ class LayerNorm(nn.Module):
 
 
 class PatchEmbed(nn.Module):
-    """ 2D Image to Patch Embedding
-        参考ConNeXtV2的架构，设计一个下采样层，包括stem层和downsample层，利用卷积把空间维度拉下来，通道加上去
-    """
+    
     def __init__(self, img_size=224, patch_size=16, stride=16, in_chans=3, embed_dim=192, norm_layer=None, flatten=True,
                  ):
         super().__init__()
@@ -84,7 +82,7 @@ class PatchEmbed(nn.Module):
         self.cnn_downsample_layers.append(stem)
 
         for i in range(2):
-            downsample_layer = nn.Sequential(  #尺寸缩小一半，通道增长一倍，通道混合，48*56*56------>192*14*14
+            downsample_layer = nn.Sequential( 
                     nn.Conv2d(dims[i], dims[i+1], kernel_size=2, stride=2),
                     LayerNorm(dims[i+1], eps=1e-6, data_format="channels_first"),
                     nn.Conv2d(dims[i+1], dims[i + 1], kernel_size=1),
@@ -110,8 +108,8 @@ class PatchEmbed(nn.Module):
 
         if self.flatten:
             x = x.flatten(2).transpose(1, 2)  # BCHW -> BNC
-        x = torch.fft.fft2(x)  #傅里叶变换，变成复张量了
-        x = torch.fft.ifft2(x * self.FFT_w).real #反变换回去
+        x = torch.fft.fft2(x)  
+        x = torch.fft.ifft2(x * self.FFT_w).real 
         x = self.norm(x)
         return x
     
@@ -472,7 +470,6 @@ class VisionMamba(nn.Module):
 
         if if_random_token_rank:
 
-            # 生成随机 shuffle 索引
             shuffle_indices = torch.randperm(M)
 
             if isinstance(token_position, list):
@@ -481,15 +478,12 @@ class VisionMamba(nn.Module):
                 print("original value: ", x[0, token_position, 0])
             print("original token_position: ", token_position)
 
-            # 执行 shuffle
             x = x[:, shuffle_indices, :]
 
             if isinstance(token_position, list):
-                # 找到 cls token 在 shuffle 之后的新位置
                 new_token_position = [torch.where(shuffle_indices == token_position[i])[0].item() for i in range(len(token_position))]
                 token_position = new_token_position
             else:
-                # 找到 cls token 在 shuffle 之后的新位置
                 token_position = torch.where(shuffle_indices == token_position)[0].item()
 
             if isinstance(token_position, list):
