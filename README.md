@@ -10,7 +10,7 @@ This project is based on  Vim ([paper](https://arxiv.org/abs/2401.09417), [code]
 Pre-training
 | Model       | Dataset   | Resolution | Top1 | Ckpt/Logs                                                    |
 | ----------- | --------- | ---------- | ---- | ------------------------------------------------------------ |
-| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 76 | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.0/checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.0/log.txt) |                                                      |
+| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 76 | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.1/checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.1/log.txt) |                                                      |
 | Vim-S-F(H)  | ImgNet 1K | 224×224    | 80.4 | retraining                                                   |
 
 
