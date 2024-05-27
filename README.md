@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is based on  Vim ([paper](https://arxiv.org/abs/2401.09417), [code](https://github.com/hustvl/Vim)) and we appreciate this excellent work. You can simply replace main.py and original models_mamba.py with our versions to reimplement our work. Among them, main.py has no substantial modifications, and only the code related to position embedding in the original file has been removed to fit our work.
+This project is based on  Vim ([paper](https://arxiv.org/abs/2401.09417), [code](https://github.com/hustvl/Vim)) and we appreciate this excellent work. You can simply replace main.py and models_mamba.py with our versions to reimplement our work. Among them, main.py has no substantial modifications, and only the code related to position embedding in the original file has been removed to fit our work.
 
 
 ## ImageNet classification
