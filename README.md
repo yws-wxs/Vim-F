@@ -9,13 +9,14 @@ This project is based on  Vim ([paper](https://arxiv.org/abs/2401.09417), [code]
 ### Pre-training
 | Model       | Dataset   | Resolution | Top1 | Ckpt/Logs                                                    |
 | ----------- | --------- | ---------- | ---- | ------------------------------------------------------------ |
-| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 76.0 | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.1/checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.1/log.txt) |                                                      |
+| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 76.0 | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.1/pre_checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.1/pre_log.txt) |                                                      |
 | Vim-S-F(H)  | ImgNet 1K | 224×224    | 80.4 | retraining                                                   |
 
 
 ### Long sequence fine-tuning
 | Model       | Dataset   | Resolution | Top1 | Ckpt/Logs                                                    |
 | ----------- | --------- | ---------- | ---- | ------------------------------------------------------------ |
-| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 78.3       | retraining                                             |
+| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 78.3       | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.1/ft_best_checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.1/ft_log.txt) |
 | Vim-S-F(H)  | ImgNet 1K | 224×224    | retraining | retraining                                             |
+>Unlike the pre-training stage, Vim's source code did not automatically use the linear scaling rule to adjust the learning rate during the fine-tuning stage. We did not manually adjust the learning rate, so the performance declined.
 
