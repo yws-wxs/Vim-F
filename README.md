@@ -16,6 +16,6 @@ This project is based on  Vim ([paper](https://arxiv.org/abs/2401.09417), [code]
 ### Long sequence fine-tuning
 | Model       | Dataset   | Resolution | Top1 | Ckpt/Logs                                                    |
 | ----------- | --------- | ---------- | ---- | ------------------------------------------------------------ |
-| Vim-Ti-F(H) | ImgNet 1K | 224×224    | retraining | retraining                                             |
+| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 78.3       | retraining                                             |
 | Vim-S-F(H)  | ImgNet 1K | 224×224    | retraining | retraining                                             |
 
