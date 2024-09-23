@@ -17,5 +17,4 @@ This project is based on  Vim ([paper](https://arxiv.org/abs/2401.09417), [code]
 | :-----------: | :---------: | :----------: | :----: | :------------------------------------------------------------: |
 | Vim-Ti-F| ImgNet 1K | 224×224    | 76.7      | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.3/v2-ti-f-ckp.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.3/v2-ti-f-log.txt) |
 | Vim-S-F  | ImgNet 1K | 224×224    | 80.9| retraining                                             |
->Unlike the pre-training stage, Vim's source code did not automatically use the linear scaling rule to adjust the learning rate during the fine-tuning stage. We did not manually adjust the learning rate, so the performance declined.
 
