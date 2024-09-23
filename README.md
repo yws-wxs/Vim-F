@@ -7,16 +7,15 @@ This project is based on  Vim ([paper](https://arxiv.org/abs/2401.09417), [code]
 
 ## ImageNet classification
 ### Pre-training
+#### V1
 | Model       | Dataset   | Resolution | Top1 | Ckpt/Logs                                                    |
 | :-----------: | :---------: | :----------: | :----: | :------------------------------------------------------------: |
-| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 76.0 | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.2/Ti_pre_checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.2/Ti_pre_log.txt) |                                                      |
+| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 76.0 | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.2/Ti_pre_checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.2/Ti_pre_log.txt) |                
 | Vim-S-F(H)  | ImgNet 1K | 224×224    | 80.5 | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.2/S_pre_checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.2/S_pre_log.txt) |
-
-
-### Long sequence fine-tuning
+#### V2
 | Model       | Dataset   | Resolution | Top1 | Ckpt/Logs                                                    |
 | :-----------: | :---------: | :----------: | :----: | :------------------------------------------------------------: |
-| Vim-Ti-F(H) | ImgNet 1K | 224×224    | 78.3       | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.2/Ti_ft_best_checkpoint.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.2/Ti_ft_log.txt) |
-| Vim-S-F(H)  | ImgNet 1K | 224×224    | retraining | retraining                                             |
+| Vim-Ti-F| ImgNet 1K | 224×224    | 76.7      | [ckpt](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.3/v2-ti-f-ckp.pth)/[log](https://github.com/yws-wxs/Vim-F/releases/download/v1.0.0.3/v2-ti-f-log.txt) |
+| Vim-S-F  | ImgNet 1K | 224×224    | 80.9| retraining                                             |
 >Unlike the pre-training stage, Vim's source code did not automatically use the linear scaling rule to adjust the learning rate during the fine-tuning stage. We did not manually adjust the learning rate, so the performance declined.
 
